@@ -7,7 +7,7 @@ let allUsers = JSON.parse(
 
 
 
-const Signup=()=> {
+const Signup = () => {
 
 
 
@@ -118,7 +118,7 @@ const Signup=()=> {
 
 
 
-const Login=() =>{
+const Login = () => {
 
 
 

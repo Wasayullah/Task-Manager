@@ -20,12 +20,13 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
     body {
         background:
             radial-gradient(circle at top left,
@@ -204,63 +205,62 @@
     .swal2-html-container {
         color: white;
     }
-    .copyrights {
-    width: 100%;
-    margin-top: 40px;
-    padding: 20px 15px;
-
-    text-align: center;
-
-    background: rgba(15, 23, 42, 0.65);
-
-    border-top: 1px solid
-        rgba(148, 163, 184, 0.2);
-
-    backdrop-filter: blur(12px);
-
-    color: #94a3b8;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    box-shadow:
-        0 -10px 30px
-        rgba(0, 0, 0, 0.15);
-}
-
-
-
-
-.copyrights strong {
-    color: #a5b4fc;
-    font-weight: 600;
-}
-
-
-
-
-.copyrights i {
-    color: #818cf8;
-    margin-right: 5px;
-}
-
-
-
-.copyrights p {
-    margin: 0;
-}
-
-
-
-@media (max-width: 576px) {
 
     .copyrights {
-        padding: 18px 10px;
-        font-size: 13px;
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px 15px;
+
+        text-align: center;
+
+        background: rgba(15, 23, 42, 0.65);
+
+        border-top: 1px solid rgba(148, 163, 184, 0.2);
+
+        backdrop-filter: blur(12px);
+
+        color: #94a3b8;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        box-shadow:
+            0 -10px 30px rgba(0, 0, 0, 0.15);
     }
 
-}
+
+
+
+    .copyrights strong {
+        color: #a5b4fc;
+        font-weight: 600;
+    }
+
+
+
+
+    .copyrights i {
+        color: #818cf8;
+        margin-right: 5px;
+    }
+
+
+
+    .copyrights p {
+        margin: 0;
+    }
+
+
+
+    @media (max-width: 576px) {
+
+        .copyrights {
+            padding: 18px 10px;
+            font-size: 13px;
+        }
+
+    }
 </style>
 
 <body class=" text-light">
@@ -312,7 +312,7 @@
             </div>
 
 
-   
+
             <button onclick="Login()" class="btn btn-primary w-100 py-2">
                 Login
             </button>
@@ -331,17 +331,17 @@
         </div>
 
     </div>
-<footer class="copyrights">
+    <footer class="copyrights">
 
-    <p>
-        <i class="fas fa-code"></i>
-        Developer
-        <strong>Mohammad Wasayullah</strong>
-        <br>
-        &copy; 2026 All rights reserved
-    </p>
+        <p>
+            <i class="fas fa-code"></i>
+            Developer
+            <strong>Mohammad Wasayullah</strong>
+            <br>
+            &copy; 2026 All rights reserved
+        </p>
 
-</footer>
+    </footer>
 
     <script src="./auth.js"></script>
 

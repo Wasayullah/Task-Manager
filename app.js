@@ -15,7 +15,7 @@ function getLoggedInUser() {
 }
 
 const currentUser = getLoggedInUser();
-document.getElementById("User").innerHTML =`<svg
+document.getElementById("User").innerHTML = `<svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
