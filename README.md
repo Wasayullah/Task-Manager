@@ -94,7 +94,6 @@ Task-Manager/
 │
 ├── ⚡ app.js
 ├── 🔐 auth.js
-├── 🎨 style.css
 │
 ├── 🖼️ logo.png
 │
