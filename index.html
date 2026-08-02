@@ -8,8 +8,124 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Task Manager</title>
 </head>
+<style>
+    body {
+        background:
+            radial-gradient(circle at top left, #312e81 0%, transparent 35%),
+            radial-gradient(circle at bottom right, #0e7490 0%, transparent 35%),
+            linear-gradient(135deg, #020617, #0f172a);
+        min-height: 100vh;
+        color: #fff;
+    }
 
-<body class="bg-dark text-light">
+    .card,
+    .status .card,
+    .adding-opts,
+    .swal2-popup {
+        background: rgba(15, 23, 42, 0.75) !important;
+        border: 1px solid rgba(148, 163, 184, 0.2) !important;
+        backdrop-filter: blur(12px);
+    }
+
+
+    .form-control {
+        background: rgba(30, 41, 59, 0.8) !important;
+        color: #f8fafc !important;
+        border: 1px solid #475569 !important;
+    }
+
+
+
+    .form-control:focus {
+        background: rgba(30, 41, 59, 0.95) !important;
+        color: #ffffff !important;
+        border-color: #818cf8 !important;
+        box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.2) !important;
+    }
+
+
+    .form-control::placeholder {
+        color: #94a3b8;
+    }
+
+
+
+    select {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border: 1px solid #475569 !important;
+    }
+
+
+    .list-group-item {
+        background: rgba(15, 23, 42, 0.85) !important;
+        color: #f8fafc !important;
+        border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    }
+
+
+
+    .list-group-item.bg-success {
+        background: rgba(22, 163, 74, 0.75) !important;
+    }
+
+
+    .status .card {
+        color: #f8fafc !important;
+    }
+
+
+    .btn-outline-light {
+        border-color: #64748b;
+        color: #e2e8f0;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #6366f1;
+        border-color: #6366f1;
+    }
+
+
+
+    .user {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 12px;
+        padding: 8px 14px;
+    }
+
+    .swal2-confirm {
+        background-color: #082a79;
+    }
+    .swal2-confirm:hover{
+        background-color: #031f61;
+    }
+    .swal2-cancel {
+        background-color: #0e7490;
+    }
+    .swal2-cancel:hover{
+        background-color: #03576e;
+    }
+
+    .swal2-title {
+        color: white;
+    }
+
+    .swal2-input {
+        background: rgba(30, 41, 59, 0.8) !important;
+        color: #f8fafc !important;
+        border: 1px solid #475569 !important;
+    }
+
+    .swal2-input:focus {
+        background: rgba(30, 41, 59, 0.95) !important;
+        color: #ffffff !important;
+        border-color: #818cf8 !important;
+        box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.2) !important;
+    }
+</style>
+
+<body class="text-light">
 
     <div class="container-fluid container-lg">
 
@@ -26,7 +142,8 @@
             </div>
 
             <div class="account d-flex align-items-center justify-content-center gap-2">
-                <div  id="User" class="btn btn-outline-primary text-center d-flex align-items-center justify-content-center"></div>
+                <div id="User"
+                    class="btn btn-outline-primary text-center d-flex align-items-center justify-content-center"></div>
                 <button class="btn btn-outline-danger" onclick="Logout()">
                     Logout
                 </button>
@@ -43,12 +160,12 @@
 
                 <div class="col-12 col-md">
                     <input type="text" name="input" id="input" placeholder="Enter task..."
-                        class="form-control bg-dark text-light border-secondary">
+                        class="form-control  text-light border-secondary">
                 </div>
 
 
                 <div class="col-12 col-sm-6 col-md-auto">
-                    <select name="priority" class="form-select bg-dark text-light border-secondary">
+                    <select name="priority" class="form-select  text-light border-secondary">
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
@@ -71,28 +188,28 @@
         <div class="status row g-3 mt-1 px-2">
 
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card p-3 h-100 bg-dark text-light border rounded-3">
+                <div class="card p-3 h-100  text-light border rounded-3">
                     <span>Total Tasks</span>
                     <strong id="total" class="fs-3">0</strong>
                 </div>
             </div>
 
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card p-3 h-100 bg-dark text-light border rounded-3">
+                <div class="card p-3 h-100  text-light border rounded-3">
                     <span>Completed</span>
                     <strong id="completed" class="fs-3">0</strong>
                 </div>
             </div>
 
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card p-3 h-100 bg-dark text-light border rounded-3">
+                <div class="card p-3 h-100  text-light border rounded-3">
                     <span>Pending</span>
                     <strong id="pending" class="fs-3">0</strong>
                 </div>
             </div>
 
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card p-3 h-100 bg-dark text-light border rounded-3">
+                <div class="card p-3 h-100  text-light border rounded-3">
                     <span>High Priority</span>
                     <strong id="high" class="fs-3">0</strong>
                 </div>
