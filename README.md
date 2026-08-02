@@ -88,8 +88,8 @@ This prevents different users from seeing each other's tasks while using the sam
 ```text
 Task-Manager/
 │
-├── 📄 index.html
-├── 📝 signup.html
+├── 📄 home.html
+├── 📝 index.html
 ├── 🔑 login.html
 │
 ├── ⚡ app.js
@@ -155,7 +155,7 @@ const currentUser = JSON.parse(
 );
 
 if (!currentUser) {
-    window.location.replace("signup.html");
+    window.location.replace("index.html");
 }
 ```
 
@@ -307,19 +307,19 @@ cd Task-Manager
 
 ### 3️⃣ Run Project
 
-Open `signup.html` using Live Server or your browser.
+Open `index.html` using Live Server or your browser.
 
 Recommended starting page:
 
 ```text
-signup.html
+index.html
 ```
 
 ---
 
 ## 🎮 Usage
 
-1. 📝 Open `signup.html`
+1. 📝 Open `index.html`
 2. 👤 Create new account
 3. 🔑 Go to Login page
 4. 📧 Login with registered credentials
