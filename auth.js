@@ -7,7 +7,7 @@ let allUsers = JSON.parse(
 
 
 
-function Signup() {
+const Signup=()=> {
 
 
 
@@ -118,7 +118,7 @@ function Signup() {
 
 
 
-function Login() {
+const Login=() =>{
 
 
 
@@ -183,7 +183,7 @@ function Login() {
 
         }).then(() => {
 
-            window.location.href = "index.html";
+            window.location.href = "home.html";
 
         });
 
