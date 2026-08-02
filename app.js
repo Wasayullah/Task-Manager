@@ -26,6 +26,8 @@ document.getElementById("User").innerHTML =`<svg
     <path d="M14 14s-1-1-1-1-1-4-5-4-5 4-5 4-1 1-1 1h12z"/>
 </svg>${currentUser.name}
 `;
+
+
 if (!currentUser) {
     window.location.href = "login.html";
 }

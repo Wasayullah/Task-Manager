@@ -8,11 +8,8 @@
 
     <title>Login - Task Manager</title>
 
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -21,26 +18,25 @@
 
 <style></style>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
     body {
         background:
-            radial-gradient(
-                circle at top left,
+            radial-gradient(circle at top left,
                 #312e81 0%,
-                transparent 35%
-            ),
-            radial-gradient(
-                circle at bottom right,
+                transparent 35%),
+            radial-gradient(circle at bottom right,
                 #0e7490 0%,
-                transparent 35%
-            ),
-            linear-gradient(
-                135deg,
+                transparent 35%),
+            linear-gradient(135deg,
                 #020617,
-                #0f172a
-            );
+                #0f172a);
 
         min-height: 100vh;
         color: #f8fafc;
@@ -50,14 +46,12 @@
     .card {
         background: rgba(15, 23, 42, 0.75) !important;
 
-        border: 1px solid
-            rgba(148, 163, 184, 0.2) !important;
+        border: 1px solid rgba(148, 163, 184, 0.2) !important;
 
         backdrop-filter: blur(12px);
 
         box-shadow:
-            0 20px 50px
-            rgba(0, 0, 0, 0.35) !important;
+            0 20px 50px rgba(0, 0, 0, 0.35) !important;
     }
 
 
@@ -82,8 +76,7 @@
 
         color: #f8fafc !important;
 
-        border: 1px solid
-            #475569 !important;
+        border: 1px solid #475569 !important;
 
         border-radius: 10px;
 
@@ -102,8 +95,7 @@
         border-color: #818cf8 !important;
 
         box-shadow:
-            0 0 0 0.2rem
-            rgba(99, 102, 241, 0.2) !important;
+            0 0 0 0.2rem rgba(99, 102, 241, 0.2) !important;
     }
 
 
@@ -115,11 +107,9 @@
 
 
     .btn-primary {
-        background: linear-gradient(
-            135deg,
-            #6366f1,
-            #4f46e5
-        ) !important;
+        background: linear-gradient(135deg,
+                #6366f1,
+                #4f46e5) !important;
 
         border: none !important;
 
@@ -135,8 +125,7 @@
         transform: translateY(-2px);
 
         box-shadow:
-            0 8px 20px
-            rgba(99, 102, 241, 0.35);
+            0 8px 20px rgba(99, 102, 241, 0.35);
     }
 
 
@@ -193,24 +182,85 @@
         }
 
     }
+
     .swal2-popup {
         background: rgba(15, 23, 42, 0.75) !important;
         border: 1px solid rgba(148, 163, 184, 0.2) !important;
         backdrop-filter: blur(12px);
     }
-        .swal2-confirm {
+
+    .swal2-confirm {
         background-color: #082a79;
     }
-    .swal2-confirm:hover{
+
+    .swal2-confirm:hover {
         background-color: #031f61;
     }
+
     .swal2-title {
         color: white;
     }
-    .swal2-html-container{
+
+    .swal2-html-container {
         color: white;
     }
+    .copyrights {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px 15px;
 
+    text-align: center;
+
+    background: rgba(15, 23, 42, 0.65);
+
+    border-top: 1px solid
+        rgba(148, 163, 184, 0.2);
+
+    backdrop-filter: blur(12px);
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    box-shadow:
+        0 -10px 30px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.copyrights strong {
+    color: #a5b4fc;
+    font-weight: 600;
+}
+
+
+
+
+.copyrights i {
+    color: #818cf8;
+    margin-right: 5px;
+}
+
+
+
+.copyrights p {
+    margin: 0;
+}
+
+
+
+@media (max-width: 576px) {
+
+    .copyrights {
+        padding: 18px 10px;
+        font-size: 13px;
+    }
+
+}
 </style>
 
 <body class=" text-light">
@@ -218,19 +268,12 @@
 
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
 
-        <div class="card  text-light border rounded-4 p-4 shadow"
-             style="width: 100%; max-width: 450px;">
+        <div class="card  text-light border rounded-4 p-4 shadow" style="width: 100%; max-width: 450px;">
 
 
             <div class="text-center mb-4">
 
-                <img
-                    src="./logo.png"
-                    alt="Logo"
-                    width="70"
-                    height="70"
-                    class="mb-3"
-                >
+                <img src="./logo.png" alt="Logo" width="70" height="70" class="mb-3">
 
                 <h1 class="h3">
                     Welcome Back
@@ -243,45 +286,34 @@
             </div>
 
 
-            <!-- Email -->
+
             <div class="mb-3">
 
                 <label for="loginEmail" class="form-label">
                     Email
                 </label>
 
-                <input
-                    type="email"
-                    id="loginEmail"
-                    class="form-control  text-light border-secondary"
-                    placeholder="Enter your email"
-                >
+                <input type="email" id="loginEmail" class="form-control  text-light border-secondary"
+                    placeholder="Enter your email">
 
             </div>
 
 
-            <!-- Password -->
+
             <div class="mb-3">
 
                 <label for="loginPass" class="form-label">
                     Password
                 </label>
 
-                <input
-                    type="password"
-                    id="loginPass"
-                    class="form-control  text-light border-secondary"
-                    placeholder="Enter your password"
-                >
+                <input type="password" id="loginPass" class="form-control  text-light border-secondary"
+                    placeholder="Enter your password">
 
             </div>
 
 
-            <!-- Login Button -->
-            <button
-                onclick="Login()"
-                class="btn btn-primary w-100 py-2"
-            >
+   
+            <button onclick="Login()" class="btn btn-primary w-100 py-2">
                 Login
             </button>
 
@@ -299,7 +331,17 @@
         </div>
 
     </div>
+<footer class="copyrights">
 
+    <p>
+        <i class="fas fa-code"></i>
+        Developer
+        <strong>Mohammad Wasayullah</strong>
+        <br>
+        &copy; 2026 All rights reserved
+    </p>
+
+</footer>
 
     <script src="./auth.js"></script>
 
