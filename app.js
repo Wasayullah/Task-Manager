@@ -204,7 +204,7 @@ function renderTasks() {
 
     getList.innerHTML = tasks.map((task) => {
         return `
-         <ul class="list-group m-2">
+         <ul class="list-group mb-2">
 
                 <li class="list-group-item text-light border rounded-3 p-3
                     ${task.completed ? "bg-success" : "bg-dark"}">
