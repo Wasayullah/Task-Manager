@@ -25,7 +25,8 @@ Users can create an account, log in, manage personal tasks, set task priorities,
 * ➕ Add new tasks
 * ✏️ Edit existing tasks
 * 🗑️ Delete tasks
-* 🔎Search items
+* 🔎 Search tasks in real time
+* 🧹 Automatically restore all tasks when search is cleared
 * ✅ Mark tasks as completed
 * 🔄 Unmark completed tasks
 * ~~❌ Cross out completed task text~~
@@ -257,8 +258,30 @@ User can edit task text using SweetAlert2.
 
 User can delete task after confirmation.
 
----
+## 🔎 Task Search
 
+Users can quickly search for tasks using the search bar.
+
+The search feature:
+
+- 🔍 Searches tasks by task name
+- ⚡ Updates results while typing
+- 🔤 Supports case-insensitive searching
+- 🧹 Automatically restores all tasks when search field is cleared
+- 📋 Shows matching tasks dynamically
+
+Example:
+
+```
+Search: JavaScript
+        ↓
+Only matching tasks displayed
+
+Clear search
+        ↓
+All tasks displayed again
+---
+```
 ## 💾 LocalStorage Structure
 
 Example:
