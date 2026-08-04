@@ -84,7 +84,33 @@
     .status .card {
         color: #f8fafc !important;
     }
+@media (max-width: 480px) {
 
+    .status {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 5px !important;
+        padding: 0 5px;
+    }
+
+    .status .card {
+        flex: 1 1 0;
+        width: auto !important;
+        min-width: 0;
+
+        padding: 10px 3px !important;
+        margin: 0 !important;
+
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .status .card div {
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
 
     .btn-outline-light {
         border-color: #64748b;
@@ -225,7 +251,7 @@
 
         </div>
         <div id="searchField">
-            
+
         </div>
 
 
