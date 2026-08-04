@@ -25,6 +25,7 @@ Users can create an account, log in, manage personal tasks, set task priorities,
 * ➕ Add new tasks
 * ✏️ Edit existing tasks
 * 🗑️ Delete tasks
+* 🔎Search items
 * ✅ Mark tasks as completed
 * 🔄 Unmark completed tasks
 * ~~❌ Cross out completed task text~~
