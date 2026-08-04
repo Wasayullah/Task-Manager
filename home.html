@@ -25,11 +25,11 @@
             radial-gradient(circle at top left, #312e81 0%, transparent 35%),
             radial-gradient(circle at bottom right, #0e7490 0%, transparent 35%),
             linear-gradient(135deg, #020617, #0f172a);
-        min-height: 100vh;
-        color: #fff;
-            min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+        min-height: 100vh !important;
+
+
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .card,
@@ -88,33 +88,34 @@
         color: #f8fafc !important;
         text-align: center;
     }
-@media (max-width: 480px) {
 
-    .status {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: 5px !important;
-        padding: 0 5px;
+    @media (max-width: 480px) {
+
+        .status {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            gap: 5px !important;
+            padding: 0 5px;
+        }
+
+        .status .card {
+            flex: 1 1 0;
+            width: auto !important;
+            min-width: 0;
+
+            padding: 10px 3px !important;
+            margin: 0 !important;
+
+            text-align: center;
+            font-size: 11px;
+        }
+
+        .status .card div {
+            font-size: 18px;
+            font-weight: bold;
+        }
     }
-
-    .status .card {
-        flex: 1 1 0;
-        width: auto !important;
-        min-width: 0;
-
-        padding: 10px 3px !important;
-        margin: 0 !important;
-
-        text-align: center;
-        font-size: 11px;
-    }
-
-    .status .card div {
-        font-size: 18px;
-        font-weight: bold;
-    }
-}
 
     .btn-outline-light {
         border-color: #64748b;
@@ -169,9 +170,11 @@
         border-color: #818cf8 !important;
         box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.2) !important;
     }
-    .main{
+
+    .main {
         flex: 1;
     }
+
     .copyrights {
         width: 100%;
         margin-top: 40px;
@@ -251,7 +254,7 @@
                 <div id="User"
                     class="btn btn-outline-primary text-center d-flex align-items-center justify-content-center"></div>
                 <button id="log" class="btn btn-outline-danger" onclick="Logout()">
-                    
+
                 </button>
             </div>
 
