@@ -50,9 +50,110 @@ if (!currentUser) {
    log.innerHTML = `
     Logout    
     `
-
+searchField.innerHTML+=`
+<div class="input-group mb-3 px-2">
+  <input type="search" oninput="Search()" id="search" class="form-control" placeholder="Search a task..." >
+`
 }
+const Search = () => {
 
+    const search = document
+        .getElementById("search")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if (search === "") {
+        renderTasks();
+        return;
+    }
+
+    const searched = tasks.filter(task =>
+        task.text.toLowerCase().includes(search)
+    );
+
+    getList.innerHTML = searched.map(task => `
+      <ul class="list-group m-2">
+
+                <li class="list-group-item text-light border rounded-3 p-3
+                    ${task.completed ? "bg-success" : "bg-dark"}">
+
+                    <div class="d-flex flex-column flex-md-row
+                                justify-content-between
+                                align-items-start
+                                align-items-md-center
+                                gap-3">
+
+                        
+                        <div class="d-flex align-items-center gap-2">
+
+                            <input
+                                type="checkbox"
+                                class="form-check-input"
+                                ${task.completed ? "checked" : ""}
+                                onchange="toggleTask(${task.id})"
+                            >
+
+                            <span class="${task.completed ? "text-decoration-line-through" : ""}" id="taskItem">
+                                ${task.text}
+                            </span>
+
+                        </div>
+
+
+                        
+                        <div class="d-flex align-items-center gap-2">
+
+                            <span class="badge ${getPriorityColor(task.priority)}">
+                                ${task.priority.toUpperCase()}
+                            </span>
+
+
+                           
+                            <button
+                                class="btn btn-sm btn-outline-light"
+                                onclick="editTask(${task.id})"
+                                title="Edit Task"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10A.5.5 0 0 1 5.5 14H2a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .146-.354l10-10zM11.207 2.5 13.5 4.793 14.293 4 12 1.707l-.793.793zm1.586 3L10.5 3.207 3 10.707V13h2.293l7.5-7.5z"/>
+                                </svg>
+                            </button>
+
+
+                           
+                            <button
+                                class="btn btn-sm btn-outline-danger"
+                                onclick="deleteTask(${task.id})"
+                                title="Delete Task"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0A.5.5 0 0 1 8.5 6v6a.5.5 0 0 1-1 0V6A.5.5 0 0 1 8 5.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L10.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+            </ul>
+    `).join("");
+};
 const TASK_STORAGE_KEY = `tasks_${currentUser.email}`;
 
 let tasks = JSON.parse(
@@ -102,9 +203,8 @@ const addItem = () => {
 function renderTasks() {
 
     getList.innerHTML = tasks.map((task) => {
-
         return `
-            <ul class="list-group m-2">
+         <ul class="list-group m-2">
 
                 <li class="list-group-item text-light border rounded-3 p-3
                     ${task.completed ? "bg-success" : "bg-dark"}">
@@ -115,7 +215,7 @@ function renderTasks() {
                                 align-items-md-center
                                 gap-3">
 
-                        <!-- Task -->
+                        
                         <div class="d-flex align-items-center gap-2">
 
                             <input
@@ -125,14 +225,14 @@ function renderTasks() {
                                 onchange="toggleTask(${task.id})"
                             >
 
-                            <span class="${task.completed ? "text-decoration-line-through" : ""}">
+                            <span class="${task.completed ? "text-decoration-line-through" : ""}" id="taskItem">
                                 ${task.text}
                             </span>
 
                         </div>
 
 
-                        <!-- Priority + Actions -->
+                        
                         <div class="d-flex align-items-center gap-2">
 
                             <span class="badge ${getPriorityColor(task.priority)}">
@@ -140,7 +240,7 @@ function renderTasks() {
                             </span>
 
 
-                            <!-- Edit -->
+                           
                             <button
                                 class="btn btn-sm btn-outline-light"
                                 onclick="editTask(${task.id})"
@@ -158,7 +258,7 @@ function renderTasks() {
                             </button>
 
 
-                            <!-- Delete -->
+                           
                             <button
                                 class="btn btn-sm btn-outline-danger"
                                 onclick="deleteTask(${task.id})"
