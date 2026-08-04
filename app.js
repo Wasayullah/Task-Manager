@@ -7,7 +7,8 @@ const totalTask = document.getElementById("total");
 const pendingTask = document.getElementById("pending");
 const completedTask = document.getElementById("completed");
 const highTask = document.getElementById("high");
-
+const log = document.querySelector("#log")
+const searchField = document.getElementById("searchField")
 function getLoggedInUser() {
     return JSON.parse(
         localStorage.getItem("loggedInUser")
@@ -18,7 +19,7 @@ const currentUser = getLoggedInUser();
 
 if (!currentUser) {
 
-    // Show Login button
+    
     document.querySelector(".account").innerHTML = `
         <a
             href="login.html"
@@ -30,7 +31,7 @@ if (!currentUser) {
 
 } else {
 
-    // Show user name
+
     document.getElementById("User").innerHTML = `
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,17 +47,10 @@ if (!currentUser) {
         ${currentUser.name}
     `;
 
-   
-    document.querySelector(".account").innerHTML = `
-        <div id="User"
-                    class="btn btn-outline-primary text-center d-flex align-items-center justify-content-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" > <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/> <path d="M14 14s-1-1-1-1-1-4-5-4-5 4-5 4-1 1-1 1h12z"/> </svg>${currentUser.name}</div>
-        <button
-            class="btn btn-outline-danger"
-            onclick="Logout()"
-        >
-            Logout
-        </button>
-    `;
+   log.innerHTML = `
+    Logout    
+    `
+
 }
 
 const TASK_STORAGE_KEY = `tasks_${currentUser.email}`;
