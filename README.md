@@ -272,7 +272,7 @@ The search feature:
 
 Example:
 
-```
+```text
 Search: JavaScript
         ↓
 Only matching tasks displayed
