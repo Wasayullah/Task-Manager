@@ -25,11 +25,7 @@
             radial-gradient(circle at top left, #312e81 0%, transparent 35%),
             radial-gradient(circle at bottom right, #0e7490 0%, transparent 35%),
             linear-gradient(135deg, #020617, #0f172a);
-        min-height: 100vh !important;
 
-
-        display: flex !important;
-        flex-direction: column !important;
     }
 
     .card,
@@ -87,36 +83,7 @@
     .status .card {
         color: #f8fafc !important;
         text-align: center;
-    }
-
-    @media (max-width: 480px) {
-
-        .status {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            gap: 5px !important;
-            padding: 0 5px;
-        }
-
-        .status .card {
-            flex: 1 1 0;
-            width: auto !important;
-            min-width: 0;
-
-            padding: 10px 3px !important;
-            margin: 0 !important;
-
-            text-align: center;
-            font-size: 11px;
-        }
-
-        .status .card div {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    }
-
+    } 
     .btn-outline-light {
         border-color: #64748b;
         color: #e2e8f0;
