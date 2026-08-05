@@ -129,8 +129,9 @@
 
     .main {
         height: 40vh;
-        margin-bottom:100vh;
+        
     }
+
 
     .user {
         background: rgba(30, 41, 59, 0.8);
@@ -172,8 +173,15 @@
         box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.2) !important;
     }
 
-    .main {
+   .main {
         flex: 1;
+        padding-bottom: 160px;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .main::-webkit-scrollbar {
+        display: none;
     }
 
     .copyrights {
@@ -333,7 +341,7 @@
 
 
         <div class="main mt-4 px-2">
-
+    
         </div>
 
     </div>

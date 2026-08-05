@@ -71,8 +71,9 @@ const Search = () => {
     const searched = tasks.filter(task =>
         task.text.toLowerCase().includes(search)
     );
-
-    getList.innerHTML = searched.map(task => `
+        getList.innerHTML=`<h1>Tasks</h1>
+            <hr class="p-2">`
+    getList.innerHTML+= searched.map(task => `
       <ul class="list-group m-2">
 
                 <li class="list-group-item text-light border rounded-3 p-3
@@ -201,8 +202,9 @@ const addItem = () => {
 
 
 function renderTasks() {
-
-    getList.innerHTML = tasks.map((task) => {
+    getList.innerHTML=`<h1>Tasks</h1>
+            <hr class="p-2">`
+    getList.innerHTML += tasks.map((task) => {
         return `
          <ul class="list-group mb-2">
 
