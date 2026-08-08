@@ -202,7 +202,7 @@ const addItem = () => {
 
 function renderTasks() {
     
-    getList.innerHTML += tasks.map((task) => {
+    getList.innerHTML = tasks.map((task) => {
         return `
          <ul class="list-group mb-2">
 
