@@ -51,13 +51,28 @@ if (!currentUser) {
     Logout    
     `
 searchField.innerHTML+=`
-<div class="input-group mb-3 px-2">
-  <label for="search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="11" cy="11" r="7"/>
-  <line x1="16.65" y1="16.65" x2="21" y2="21"/>
-</svg></label><input type="search" name="search" oninput="Search()" id="search" class="form-control" placeholder="Search a task..." >
+    <div class="input-group mb-3 px-2">
+        <label for="search">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                width="20" height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="16.65" y1="16.65" x2="21" y2="21"/>
+            </svg>
+        </label>
+
+        <input type="search"
+            name="search"
+            oninput="Search()"
+            id="search"
+            class="form-control"
+            placeholder="Search a task...">
+    </div>
 `
 }
 const Search = () => {
